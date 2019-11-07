@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basic-data-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: basic-data-pod
+  template:
+    metadata:
+      labels:
+        app: basic-data-pod
+    spec:
+      containers:
+      - name: basic-data-container
+        image: basicdataapi:v2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
