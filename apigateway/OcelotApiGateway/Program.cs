@@ -7,6 +7,9 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using Ocelot.Middleware;
+using Ocelot.DependencyInjection;
 
 namespace OcelotApiGateway
 {
@@ -14,11 +17,33 @@ namespace OcelotApiGateway
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            IWebHostBuilder builder = new WebHostBuilder();
+            builder.ConfigureServices(s =>
+            {
+                s.AddSingleton(builder);
+            });
+            builder.UseKestrel()
+                   .UseContentRoot(Directory.GetCurrentDirectory())
+                   .UseStartup<Startup>()
+                   .UseUrls("http://localhost:9000");
+
+            var host = builder.Build();
+            host.Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+        public static IWebHost CreateWebHostBuilder(string[] args)
+        {
+            IWebHostBuilder builder = WebHost.CreateDefaultBuilder(args);
+
+            //WebHost.CreateDefaultBuilder(args)
+            //    .UseStartup<Startup>();
+
+            builder.ConfigureServices(s => s.AddSingleton(builder))
+               .ConfigureAppConfiguration(ic => ic.AddJsonFile("configuration.json"))
+               .UseStartup<Startup>();
+
+            IWebHost host = builder.Build();
+            return host;
+        }
     }
 }

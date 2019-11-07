@@ -1,0 +1,30 @@
+{
+    "ReRoutes": [
+        //{
+        //    "DownstreamPathTemplate": "/api/{everything}",
+        //    "DownstreamScheme": "http",
+        //    "DownstreamHost": "localhost",
+        //    "DownstreamPort": 5000,
+        //    "UpstreamPathTemplate": "/api/{everything}",
+        //    "UpstreamHttpMethod": [ "Get" ]
+        //}
+        //,
+        {
+            "DownstreamPathTemplate": "/api/values",
+            "DownstreamScheme": "http",
+            //"ServiceName": "basicdata",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5000
+                }
+            ],
+            "UpstreamPathTemplate": "/basicdata",
+            "UpstreamHttpMethod": [ "Get" ]
+        }
+    ],
+    "GlobalConfiguration": {
+        "RequestIdKey": "OcRequestId",
+        "AdministrationPath": "/administration"
+    }
+}

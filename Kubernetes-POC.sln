@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apigateway", "apigateway", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{9AA2E5B0-8E00-4296-921F-2C069F3BC17F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicData.API", "services\BasicData.API\BasicData.API.csproj", "{55BC8C19-87A5-4C39-BD6A-E2615145754C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicData.API", "services\BasicData.API\BasicData.API.csproj", "{55BC8C19-87A5-4C39-BD6A-E2615145754C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
