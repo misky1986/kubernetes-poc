@@ -5,10 +5,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY ["services/BasicData.API/BasicData.API.csproj", "services/BasicData.API/"]
-RUN dotnet restore "services/BasicData.API/BasicData.API.csproj"
+COPY ["/BasicData.API.csproj", "./"]
+RUN dotnet restore "./BasicData.API.csproj"
 COPY . .
-WORKDIR "/src/services/BasicData.API"
+WORKDIR "/src"
 RUN dotnet build "BasicData.API.csproj" -c Release -o /app/build
 
 FROM build AS publish

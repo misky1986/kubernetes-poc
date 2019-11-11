@@ -11,6 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{9A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicData.API", "services\BasicData.API\BasicData.API.csproj", "{55BC8C19-87A5-4C39-BD6A-E2615145754C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "manifests", "manifests", "{E1DD6DF7-4C84-4DD2-9094-241B364EB647}"
+	ProjectSection(SolutionItems) = preProject
+		manifests\deployment.yml = manifests\deployment.yml
+		manifests\service.yml = manifests\service.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

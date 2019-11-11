@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basic-data-api-deployment
+spec:
+  selector:
+    matchLabels:
+      app: basic-data-api-pod
+  template:
+    metadata:
+      labels:
+        app: basic-data-api-pod
+    spec:
+      containers:
+      - name: basic-data-api-container
+        image: basicdataapi:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ocelot-gateway-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ocelot-gateway-pod
+  template:
+    metadata:
+      labels:
+        app: ocelot-gateway-pod
+    spec:
+      containers:
+      - name: ocelot-gateway-container
+        image: ocelotapigateway:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
