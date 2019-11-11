@@ -11,11 +11,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{9A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicData.API", "services\BasicData.API\BasicData.API.csproj", "{55BC8C19-87A5-4C39-BD6A-E2615145754C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "manifests", "manifests", "{E1DD6DF7-4C84-4DD2-9094-241B364EB647}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7C268076-4C13-4CB8-BCFE-9474E9F0455C}"
 	ProjectSection(SolutionItems) = preProject
-		manifests\deployment.yml = manifests\deployment.yml
-		manifests\service.yml = manifests\service.yml
+		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{8FC7D228-C14B-4E4B-9F1B-A41EF481261A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dashboard", "dashboard", "{99F4EA42-5E4E-4FF5-A183-20B6875F982C}"
+	ProjectSection(SolutionItems) = preProject
+		dashboard-adminuser.yaml = dashboard-adminuser.yaml
+		k8s\dashboard\dashboard-cluster-role-binding.yaml = k8s\dashboard\dashboard-cluster-role-binding.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "manifests", "manifests", "{BB8CEC4B-5A49-4062-AA20-F3415AB1BA8E}"
+	ProjectSection(SolutionItems) = preProject
+		k8s\manifests\deployment.yml = k8s\manifests\deployment.yml
+		k8s\manifests\service.yml = k8s\manifests\service.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubernetesTestApp", "test\KubernetesTestApp\KubernetesTestApp.csproj", "{2D16C24F-A1EA-407B-A2D6-FE4A3CF3FCC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1F9D2470-43E1-470A-9E6D-8FC612CAB7C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +48,10 @@ Global
 		{55BC8C19-87A5-4C39-BD6A-E2615145754C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55BC8C19-87A5-4C39-BD6A-E2615145754C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55BC8C19-87A5-4C39-BD6A-E2615145754C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D16C24F-A1EA-407B-A2D6-FE4A3CF3FCC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D16C24F-A1EA-407B-A2D6-FE4A3CF3FCC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D16C24F-A1EA-407B-A2D6-FE4A3CF3FCC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D16C24F-A1EA-407B-A2D6-FE4A3CF3FCC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +59,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CAD4C7EF-F2D3-4318-B997-6476533F60E9} = {AB550FF3-F9F8-4E7F-83BD-6551334D4537}
 		{55BC8C19-87A5-4C39-BD6A-E2615145754C} = {9AA2E5B0-8E00-4296-921F-2C069F3BC17F}
+		{99F4EA42-5E4E-4FF5-A183-20B6875F982C} = {8FC7D228-C14B-4E4B-9F1B-A41EF481261A}
+		{BB8CEC4B-5A49-4062-AA20-F3415AB1BA8E} = {8FC7D228-C14B-4E4B-9F1B-A41EF481261A}
+		{2D16C24F-A1EA-407B-A2D6-FE4A3CF3FCC3} = {1F9D2470-43E1-470A-9E6D-8FC612CAB7C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF3818B6-F351-484D-A79E-853FECB6FDA3}
